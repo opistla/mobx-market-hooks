@@ -38,6 +38,12 @@ const NOODLE = [
     price: 900,
     imgSrc: 'https://photo3.enuri.info/data/images/service/middle/686000/686917.jpg'
   },
+  {
+    code: 'n02',
+    name: '왕뚜껑',
+    price: 1000,
+    imgSrc: 'https://photo3.enuri.info/data/images/service/middle/686000/686917.jpg'
+  },
 ];
 
 const foodList = (type) => {
