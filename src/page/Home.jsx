@@ -19,7 +19,11 @@ const Home = () => {
     },
     {
       header: 'Food',
-      description: <Button {...buttonProperty} onClick={() => onClick('superMarket')} />,
+      description: <Button {...buttonProperty} onClick={() => onClick('food')} />,
+    },
+    {
+      header: '정산',
+      description: <Button {...buttonProperty} onClick={() => onClick('money')} />,
     },
   ]
 
@@ -29,7 +33,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      <Card.Group className="card-group" items={items} />
+      <Card.Group itemsPerRow={3} className="card-group" items={items} />
     </div>
   )
 }

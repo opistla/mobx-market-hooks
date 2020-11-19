@@ -4,7 +4,7 @@ import { YgInput } from 'components';
 import './BasketItem.css';
 
 const BasketItem = (props) => {
-  const { code, name, price, count, onTake, onChangeCount } = props;
+  const { code, name, price, defaultPrice, count, onTake, onChangeCount } = props;
 
   return useObserver (() => (
     <div className="BasketItem">
@@ -13,7 +13,7 @@ const BasketItem = (props) => {
       <YgInput
         type="number"
         value={count}
-        onChange={(e) => onChangeCount({ code, value: e.target.value })}
+        onChange={(e) => onChangeCount({ code, defaultPrice, value: e.target.value })}
       />
       <div className="return" onClick={() => onTake(code)}>갖다놓기</div>
     </div>

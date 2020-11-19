@@ -1,0 +1,7 @@
+.PcTemplate {
+  /* width: 768px; */
+  display: flex;
+  margin-left: 20px;
+  margin-right: auto;
+  margin-top: 1rem;
+}

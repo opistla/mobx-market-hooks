@@ -22,6 +22,7 @@ const BasketItemList = () => {
           key={i}
           code={item.code}
           name={item.name}
+          defaultPrice={item.defaultPrice}
           price={item.price}
           count={item.count}
           onChangeCount={onChangeCount}

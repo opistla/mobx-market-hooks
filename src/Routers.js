@@ -5,10 +5,10 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Home from './page/Home';
-import { SuperMarket } from './page/market';
-
-
+import Home from 'page/Home';
+import { PcTemplate } from 'page/pc';
+import { SuperMarket } from 'page/market';
+import { MoneyTemplate } from 'page/money';
 
 const Routers = () => {
 
@@ -18,8 +18,16 @@ const Routers = () => {
       component: Home
     },
     {
-      path: "/superMarket",
+      path: "/pc",
+      component: PcTemplate
+    },
+    {
+      path: "/food",
       component: SuperMarket
+    },
+    {
+      path: "/money",
+      component: MoneyTemplate
     }
   ];
 
@@ -31,7 +39,13 @@ const Routers = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/superMarket">superMarket</Link>
+            <Link to="/pc">pc</Link>
+          </li>
+          <li>
+            <Link to="/food">food</Link>
+          </li>
+          <li>
+            <Link to="/money">정산</Link>
           </li>
         </ul>
       </div>

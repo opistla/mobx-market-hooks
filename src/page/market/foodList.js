@@ -3,7 +3,7 @@ const SNACK = [
     code: 's01',
     name: '포카칩',
     price: 1500,
-    imgSrc: 'https://image.auction.co.kr/itemimage/11/6e/08/116e08c9b6.jpg'
+    imgSrc: 'https://image.enuri.info/webimage_300/2219800000/2219830000/2219836670.jpg'
   },
   {
     code: 's02',
@@ -42,7 +42,7 @@ const NOODLE = [
     code: 'n02',
     name: '왕뚜껑',
     price: 1000,
-    imgSrc: 'https://photo3.enuri.info/data/images/service/middle/686000/686917.jpg'
+    imgSrc: 'https://images.coocha.co.kr/upload/2020/07/interparkep/09/thumb4_406863713.jpg'
   },
 ];
 
