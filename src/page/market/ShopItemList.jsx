@@ -3,7 +3,7 @@ import { Item } from 'semantic-ui-react';
 import { YgTab } from 'components';
 import useStore from 'useStore';
 import ShopItem from './ShopItem';
-import foolList from './foodList';
+import foolList from 'datas/foodList';
 
 
 const ShopItemList = () => {

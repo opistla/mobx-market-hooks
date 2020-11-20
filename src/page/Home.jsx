@@ -1,31 +1,25 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Card, Button } from 'semantic-ui-react';
+import _ from 'lodash';
 import './Home.css';
-
-const buttonProperty = {
-  size: 'massive',
-  content: '입장'
-};
 
 const Home = () => {
 
   const history = useHistory();
 
-  const items = [
-    {
-      header: 'PC',
-      description: <Button {...buttonProperty} onClick={() => onClick('home')} />,
-    },
-    {
-      header: 'Food',
-      description: <Button {...buttonProperty} onClick={() => onClick('food')} />,
-    },
-    {
-      header: '정산',
-      description: <Button {...buttonProperty} onClick={() => onClick('money')} />,
-    },
-  ]
+  const pageList = [
+    { name: 'PC', page: 'pc' },
+    { name: 'Food', page: 'food' },
+    { name: '정산', page: 'money' },
+  ];
+
+  const items = _.map(pageList, (item, i) => {
+    return {
+      key: i,
+      description: <Button size='massive' content={item.name} onClick={() => onClick(item.page)} />
+    }
+  });
 
   const onClick = (page) => {
     history.push(`/${page}`);

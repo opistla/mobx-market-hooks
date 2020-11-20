@@ -8,7 +8,7 @@ const MoneyTemplate = () => {
 
   const style = {
     marginLeft: '50%',
-    marginTop: '30%',
+    marginTop: '20%',
     fontSize: '50px'
   }
 

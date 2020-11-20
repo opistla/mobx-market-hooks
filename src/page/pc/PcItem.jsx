@@ -15,7 +15,7 @@ const PcItem = (props) => {
           size='mini'
           src='https://e7.pngegg.com/pngimages/825/741/png-clipart-kakaotalk-kakao-friends-sticker-iphone-iphone-electronics-smiley.png'
         />
-        <Card.Header><Icon className="desktop" />{item.header} (사용자명)</Card.Header>
+        <Card.Header><Icon className="desktop" />{item.header} ({item.userId})</Card.Header>
         <Card.Meta>{moment().format('YYYY-MM-DD hh:mm:ss')}</Card.Meta>
         <Card.Description>
           배틀그라운드
