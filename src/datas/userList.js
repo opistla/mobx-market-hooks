@@ -16,11 +16,6 @@ const userList = {
     return _.uniq(ids);
   },
 
-  // 이미지
-  USER_IMAGE: [
-    'https://e7.pngegg.com/pngimages/825/741/png-clipart-kakaotalk-kakao-friends-sticker-iphone-iphone-electronics-smiley.png',
-
-  ]
 }
 
 export default userList;
