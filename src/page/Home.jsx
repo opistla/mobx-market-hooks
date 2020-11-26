@@ -11,7 +11,7 @@ const Home = () => {
   const pageList = [
     { name: 'PC', page: 'pc' },
     { name: 'Food', page: 'food' },
-    { name: '정산', page: 'money' },
+    { name: '정산', page: 'payment' },
   ];
 
   const items = _.map(pageList, (item, i) => {

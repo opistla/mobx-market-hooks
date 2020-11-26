@@ -1,9 +1,9 @@
 import {
-  counter, market, user
+  counter, market, user, payment
 } from './stores';
 
 const useStore = () => {
-  return { counter, market, user };
+  return { counter, market, user, payment };
 }
 
 export default useStore;

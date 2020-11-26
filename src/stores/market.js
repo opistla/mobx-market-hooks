@@ -1,9 +1,9 @@
 import { observable } from 'mobx';
+import { payment } from './payment';
 import _ from 'lodash';
 
 const market = observable({
 
-  totalMoney: 0,
   selectedItems: [],
 
   put(item) {
@@ -40,7 +40,14 @@ const market = observable({
   },
 
   payment() {
-    this.totalMoney += this.total;
+    const list = _.map(this.selectedItems, item => {
+      return {
+        type: 'food',
+        code: item.code,
+        payment: item.price
+      }
+    })
+    payment.addPayment(this.total, list);
     this.selectedItems = [];
   },
 

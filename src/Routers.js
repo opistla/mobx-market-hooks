@@ -8,7 +8,7 @@ import {
 import Home from 'page/Home';
 import { PcTemplate } from 'page/pc';
 import { SuperMarket } from 'page/market';
-import { MoneyTemplate } from 'page/money';
+import { PaymentTemplate } from 'page/payment';
 
 const Routers = () => {
 
@@ -26,8 +26,8 @@ const Routers = () => {
       component: SuperMarket
     },
     {
-      path: "/money",
-      component: MoneyTemplate
+      path: "/payment",
+      component: PaymentTemplate
     }
   ];
 
@@ -45,7 +45,7 @@ const Routers = () => {
             <Link to="/food">food</Link>
           </li>
           <li>
-            <Link to="/money">정산</Link>
+            <Link to="/payment">정산</Link>
           </li>
         </ul>
       </div>

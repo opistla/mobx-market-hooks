@@ -34,7 +34,7 @@ const PcDynamic = (props) => {
         {item.play}
       </Card.Description>
       <Card.Description>
-        <Icon className="won sign" />{util.numberCommas(item.pay)}
+        <Icon className="won sign" />{util.numberCommas(item.payment)}
       </Card.Description>
     </>
   ))
