@@ -17,7 +17,8 @@ const payment = observable({
       });
     }
 
-    this.productObj = _.uniqBy([...this.productObj, ...list], 'code')
+    this.productObj = _.sortBy(_.uniqBy([...this.productObj, ...list], 'code'), s => Number(s.code.replace('번', '')));
+
   }
 
 });

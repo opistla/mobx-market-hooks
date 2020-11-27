@@ -1,30 +1,40 @@
-import React from 'react';
+import React, {  useCallback } from 'react';
 import { YgTable } from 'components';
 import _ from 'lodash';
+import { util } from 'utils/util';
+
+const HEADER = [
+  { text: '분류', style: { width: '300px' } },
+  { text: '상품', style: { width: '300px' } },
+  { text: '금액', style: {} },
+];
 
 const PaymentTable = (props) => {
-
-  const header = [
-    { text: '분류' },
-    { text: '상품' },
-    { text: '금액' },
-  ];
-
   const { data } = props;
 
-  const body = _.map(data, item => {
-    return {
-      cell: _.map(item, v => {
-        return { text: v }
-      })
-    }
-  });
+  const body = useCallback((items) => {
+    return _.map(items, item => {
+      return {
+        cell: _.map(item, v => {
+          return { text: util.numberCommas(v) }
+        })
+      }
+    });
+  }, []);
 
   return (
-    <YgTable
-      header={header}
-      body={body}
-    />
+    _.map(_.groupBy(data, 'type'), (group, i) => (
+      <>
+        <div key={i} style={{ overflow: 'auto', height: '300px' }}>
+          <YgTable
+            key={i}
+            header={HEADER}
+            body={body(group)}
+          />
+        </div>
+        { i !== data.length - 1 && <hr />}
+      </>
+    ))
   )
 }
 

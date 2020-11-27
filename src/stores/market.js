@@ -14,6 +14,7 @@ const market = observable({
       return;
     }
 
+    fined.category = item.category;
     fined.defaultPrice = item.price;
     fined.price += item.price;
     fined.count += 1;
@@ -43,10 +44,11 @@ const market = observable({
     const list = _.map(this.selectedItems, item => {
       return {
         type: 'food',
-        code: item.code,
+        code: `${item.name} x ${item.count}`,
         payment: item.price
       }
-    })
+    });
+
     payment.addPayment(this.total, list);
     this.selectedItems = [];
   },

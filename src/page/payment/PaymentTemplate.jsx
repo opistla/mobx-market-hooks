@@ -19,8 +19,6 @@ const PaymentTemplate = () => {
     marginTop: '5%'
   }
 
-  console.log('payment template', payment.productObj);
-
   return (
     <div style={style}>
       <PaymentTable data={payment.productObj} />

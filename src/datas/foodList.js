@@ -46,24 +46,28 @@ const NOODLE = [
   },
 ];
 
-const foodList = (type) => {
-  let foods = [];
-  switch(type.toUpperCase()) {
-    case 'SNACK':
-      foods = SNACK;
-      break;
-    case 'DRINK':
-      foods = DRINK;
-      break;
-    case 'RICE':
-    foods = RICE;
-      break;
-    case 'NOODLE':
-    foods = NOODLE;
-      break;
-    default: break;
+const foodList = {
+
+  getFoodList: (type) => {
+    let foods = [];
+    switch(type.toUpperCase()) {
+      case 'SNACK':
+        foods = SNACK;
+        break;
+      case 'DRINK':
+        foods = DRINK;
+        break;
+      case 'RICE':
+      foods = RICE;
+        break;
+      case 'NOODLE':
+      foods = NOODLE;
+        break;
+      default: break;
+    }
+    return foods;
   }
-  return foods;
+
 }
 
 export default foodList;

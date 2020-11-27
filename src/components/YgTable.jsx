@@ -12,7 +12,7 @@ const YgTable = (props) => {
         <Table.Row>
           {
             _.map(header, (item, i) => (
-              <Table.HeaderCell key={i}>{item.text}</Table.HeaderCell>
+              <Table.HeaderCell key={i} style={item.style}>{item.text}</Table.HeaderCell>
             ))
           }
         </Table.Row>
