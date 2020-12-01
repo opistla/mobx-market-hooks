@@ -11,13 +11,13 @@ const PaymentTemplate = () => {
     marginLeft: '10%',
     marginRight: '10%',
     marginTop: '5%',
-  }
+  };
 
   const totalStyle = {
     textAlign: 'center',
     fontSize: '40px',
     marginTop: '5%'
-  }
+  };
 
   return (
     <div style={style}>
@@ -26,7 +26,7 @@ const PaymentTemplate = () => {
         총 금액: <b>{util.numberCommas(payment.totalMoney)}</b> 원
       </div>
     </div>
-  )
+  );
 }
 
 export default PaymentTemplate;

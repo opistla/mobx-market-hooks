@@ -24,7 +24,7 @@ const YgTable = (props) => {
               <Table.Row key={i}>
                 {
                   _.map(item.cell, (cell, c) => (
-                    <Table.Cell key={c}>{cell.text}</Table.Cell>
+                    <Table.Cell key={`${i}${c}`}>{cell.text}</Table.Cell>
                   ))
                 }
               </Table.Row>
@@ -33,7 +33,7 @@ const YgTable = (props) => {
         </Table.Body>
 
     </Table>
-  )
+  );
 }
 
 export default YgTable;

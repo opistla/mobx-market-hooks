@@ -1,5 +1,4 @@
 import React from 'react';
-import useStore from 'useStore';
 import { YgImage, YgButton } from 'components';
 import { Card, Icon } from 'semantic-ui-react';
 import moment from 'moment';
@@ -8,18 +7,7 @@ import PcDynamic from './PcDynamic';
 
 const PcItem = (props) => {
 
-
-
-  const { user } = useStore();
-  const { item } = props;
-
-  const onStartPc = (num) => {
-    user.pcStart(num);
-  }
-
-  const onEndPc = (num) => {
-    user.pcEnd(num);
-  }
+  const { item, onStartPc, onEndPc } = props;
 
   return (
     <Card>

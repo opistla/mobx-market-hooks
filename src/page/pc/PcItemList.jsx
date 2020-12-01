@@ -5,14 +5,14 @@ import { PcItem } from 'page/pc';
 
 const PcItemList = (props) => {
 
-  const { items } = props;
+  const { items, onStartPc, onEndPc } = props;
 
   return (
     <Card.Group
       className="card-group"
     >
       {
-        _.map(items, (item, i) => <PcItem key={i} item={item} />)
+        _.map(items, (item, i) => <PcItem key={i} item={item} onStartPc={onStartPc} onEndPc={onEndPc} />)
       }
     </Card.Group>
   );

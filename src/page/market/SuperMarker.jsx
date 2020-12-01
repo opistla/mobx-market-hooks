@@ -3,11 +3,11 @@ import {
   SuperMarketTemplate, ShopItemList, BasketItemList, TotalPrice
 } from './index';
 
-const SuperMarket = () => (
+const SuperMarket = (props) => (
   <SuperMarketTemplate
     items={<ShopItemList />}
     basket={<BasketItemList />}
-    total={<TotalPrice />}
+    total={<TotalPrice modal={props.modal} />}
   />
 );
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { Card, Button } from 'semantic-ui-react';
+import { Card, Button, Embed } from 'semantic-ui-react';
 import _ from 'lodash';
 import './Home.css';
 
-const Home = () => {
+const Home = (props) => {
 
   const history = useHistory();
 
@@ -17,7 +17,7 @@ const Home = () => {
   const items = _.map(pageList, (item, i) => {
     return {
       key: i,
-      description: <Button size='massive' content={item.name} onClick={() => onClick(item.page)} />
+      description: <Button fluid size='massive' content={item.name} onClick={() => onClick(item.page)} />
     }
   });
 
@@ -25,10 +25,20 @@ const Home = () => {
     history.push(`/${page}`);
   }
 
+  console.log('HOME', props);
+
   return (
-    <div className="home">
-      <Card.Group itemsPerRow={3} className="card-group" items={items} />
-    </div>
+    <>
+      <div className="home">
+        <Card.Group itemsPerRow={3} className="card-group" items={items} />
+      </div>
+      <Embed
+        id='FjTqRZS4JO8'
+        placeholder='/images/image-16by9.png'
+        source='youtube'
+        aspectRatio='21:9'
+      />
+    </>
   )
 }
 

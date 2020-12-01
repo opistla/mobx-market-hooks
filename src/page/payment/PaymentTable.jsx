@@ -2,6 +2,7 @@ import React, {  useCallback } from 'react';
 import { YgTable } from 'components';
 import _ from 'lodash';
 import { util } from 'utils/util';
+import './PaymentTable.css';
 
 const HEADER = [
   { text: '분류', style: { width: '300px' } },
@@ -24,18 +25,14 @@ const PaymentTable = (props) => {
 
   return (
     _.map(_.groupBy(data, 'type'), (group, i) => (
-      <>
-        <div key={i} style={{ overflow: 'auto', height: '300px' }}>
-          <YgTable
-            key={i}
-            header={HEADER}
-            body={body(group)}
-          />
-        </div>
-        { i !== data.length - 1 && <hr />}
-      </>
+      <div key={i} className="PaymentTable">
+        <YgTable
+          header={HEADER}
+          body={body(group)}
+        />
+      </div>
     ))
-  )
+  );
 }
 
 export default PaymentTable;
