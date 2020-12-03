@@ -8,7 +8,7 @@ const YgImage = (props) => {
       {...props}
       src={`${process.env.PUBLIC_URL}/img/${props.src}`}
     />
-  )
-}
+  );
+};
 
 export default YgImage;

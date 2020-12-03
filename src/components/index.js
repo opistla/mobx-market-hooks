@@ -14,4 +14,4 @@ export {
   YgButton,
   YgTable,
   YgModal
-}
+};

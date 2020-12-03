@@ -17,9 +17,9 @@ const PaymentTable = (props) => {
     return _.map(items, item => {
       return {
         cell: _.map(item, v => {
-          return { text: util.numberCommas(v) }
+          return { text: util.numberCommas(v) };
         })
-      }
+      };
     });
   }, []);
 
@@ -33,6 +33,6 @@ const PaymentTable = (props) => {
       </div>
     ))
   );
-}
+};
 
 export default PaymentTable;

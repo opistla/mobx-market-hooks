@@ -14,7 +14,7 @@ const TotalPrice = (props) => {
       isConfirm: true,
       onOk: () => market.payment()
     });
-  }
+  };
 
   return useObserver(() => (
     <>
@@ -29,6 +29,6 @@ const TotalPrice = (props) => {
       </p>
     </>
   ));
-}
+};
 
 export default TotalPrice;

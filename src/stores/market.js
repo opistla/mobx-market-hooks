@@ -34,7 +34,7 @@ const market = observable({
     this.selectedItems = _.filter(this.selectedItems, f => {
       if (f.code === item.code) {
         f.price = item.defaultPrice * Number(item.value);
-        f.count = Number(item.value);;
+        f.count = Number(item.value);
       }
       return f.count !== 0;
     });
@@ -46,7 +46,7 @@ const market = observable({
         type: 'food',
         code: `${item.name} x ${item.count}`,
         payment: item.price
-      }
+      };
     });
 
     payment.addPayment(this.total, list);

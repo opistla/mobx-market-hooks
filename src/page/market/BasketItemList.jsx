@@ -9,11 +9,11 @@ const BasketItemList = () => {
 
   const onChangeCount = (obj) => {
     market.changeCount(obj);
-  }
+  };
 
   const onTake = (code) => {
     market.take(code);
-  }
+  };
 
   return useObserver(() => (
     <div>

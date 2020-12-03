@@ -6,4 +6,4 @@ export {
   userList,
   foodList,
   ko
-}
+};

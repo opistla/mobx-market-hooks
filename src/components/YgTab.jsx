@@ -26,7 +26,7 @@ const YgTab = (props) => {
       // renderActiveOnly={false}
       panes={panes}
     />
-  )
-}
+  );
+};
 
 export default YgTab;

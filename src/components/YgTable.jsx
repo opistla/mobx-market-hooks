@@ -18,22 +18,22 @@ const YgTable = (props) => {
         </Table.Row>
       </Table.Header>
 
-        <Table.Body>
-          {
-            _.map(body, (item, i) => (
-              <Table.Row key={i}>
-                {
-                  _.map(item.cell, (cell, c) => (
-                    <Table.Cell key={`${i}${c}`}>{cell.text}</Table.Cell>
-                  ))
-                }
-              </Table.Row>
-            ))
-          }
-        </Table.Body>
+      <Table.Body>
+        {
+          _.map(body, (item, i) => (
+            <Table.Row key={i}>
+              {
+                _.map(item.cell, (cell, c) => (
+                  <Table.Cell key={`${i}${c}`}>{cell.text}</Table.Cell>
+                ))
+              }
+            </Table.Row>
+          ))
+        }
+      </Table.Body>
 
     </Table>
   );
-}
+};
 
 export default YgTable;

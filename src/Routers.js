@@ -3,12 +3,14 @@ import {
   BrowserRouter,
   Switch,
   Route,
-  Link
+  // Link
 } from "react-router-dom";
 import Home from 'page/Home';
-import { PcTemplate } from 'page/pc';
+import { PcRoom } from 'page/pc';
 import { SuperMarket } from 'page/market';
 import { PaymentTemplate } from 'page/payment';
+import SidebarTemplate from 'page/SidebarTemplate';
+import { Segment, Sidebar, Button, Icon } from 'semantic-ui-react';
 
 const Routers = (props) => {
 
@@ -19,7 +21,7 @@ const Routers = (props) => {
     },
     {
       path: "/pc",
-      component: PcTemplate
+      component: PcRoom
     },
     {
       path: "/food",
@@ -30,6 +32,14 @@ const Routers = (props) => {
       component: PaymentTemplate
     }
   ];
+
+  const [visible, setVisible] = React.useState(false);
+
+  const onClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setVisible(true);
+  };
 
   return (
     // <BrowserRouter>
@@ -62,33 +72,31 @@ const Routers = (props) => {
     // </BrowserRouter>
     <BrowserRouter>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/pc">pc</Link>
-          </li>
-          <li>
-            <Link to="/food">food</Link>
-          </li>
-          <li>
-            <Link to="/payment">정산</Link>
-          </li>
-        </ul>
-
-        <Switch>
-          <Route exact path="/" component={Home} />
-          {routes.map((route, i) => {
-            return (
-              <RouteWithSubRoutes key={i} {...route} modal={props.modal} onLoading={props.onLoading} />
-            )
-          })}
-        </Switch>
+        <Sidebar.Pushable as={Segment}>
+          <SidebarTemplate visible={visible} setVisible={(e) => setVisible(e)} />
+          <Sidebar.Pusher dimmed={visible}>
+            <Segment basic>
+              <Segment>
+                <Button fluid color='green' onClick={onClick}>
+                  <Icon name="list alternate" />
+                  Menu
+                </Button>
+              </Segment>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                {routes.map((route, i) => {
+                  return (
+                    <RouteWithSubRoutes key={i} {...route} modal={props.modal} onLoading={props.onLoading} />
+                  );
+                })}
+              </Switch>
+            </Segment>
+          </Sidebar.Pusher>
+        </Sidebar.Pushable>
       </div>
     </BrowserRouter>
   );
-}
+};
 
 const RouteWithSubRoutes = (route) => {
   return (
@@ -98,10 +106,10 @@ const RouteWithSubRoutes = (route) => {
       render={props => {
         return (
           <route.component {...props} routes={route.routes} modal={route.modal} onLoading={route.onLoading} />
-        )
+        );
       }}
     />
   );
-}
+};
 
 export default Routers;

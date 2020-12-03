@@ -12,4 +12,4 @@ export {
   ShopItemList,
   BasketItemList,
   TotalPrice
-}
+};

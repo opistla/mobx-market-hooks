@@ -12,11 +12,11 @@ const YgInput = (props) => {
       value={value}
       onChange={onChange}
     />
-  )
-}
+  );
+};
 
 YgInput.defaultProps = {
   type: 'text'
-}
+};
 
 export default YgInput;

@@ -8,11 +8,11 @@ const Counter = () => {
 
   const increase = () => {
     counter.increase();
-  }
+  };
 
   const decrease = () => {
     counter.decrease();
-  }
+  };
 
   return useObserver(() => (
     <div>
@@ -21,6 +21,6 @@ const Counter = () => {
       <button onClick={decrease}>-1</button>
     </div>
   ));
-}
+};
 
 export default Counter;

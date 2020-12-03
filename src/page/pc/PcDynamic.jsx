@@ -1,6 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
-import { useObserver } from 'mobx-react';
 import { Card, Icon } from 'semantic-ui-react';
 import useStore from 'useStore';
 import moment from 'moment';
@@ -14,18 +12,22 @@ const PcDynamic = (props) => {
   const { user } = useStore();
 
   useEffect(() => {
-    user.userSetTime(item);
+    if (item.state === 'start') {
+      user.userSetTime(item);
+    }
   }, []);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      user.userDynamicData(item, CONTER);
-    }, 1000);
-
+    let timeout = null;
+    if (item.state === 'start') {
+      timeout = setTimeout(() => {
+        user.userDynamicData(item, CONTER);
+      }, 1000);
+    }
     return () => { clearTimeout(timeout); };
-  }, [item.time]);
+  }, [item.time, item.state]);
 
-  return useObserver(() => (
+  return (
     <>
       <Card.Meta>
         사용시간: {moment().hour(0).minute(0).second(item.time).format('HH:mm:ss')}
@@ -37,7 +39,7 @@ const PcDynamic = (props) => {
         <Icon className="won sign" />{util.numberCommas(item.payment)}
       </Card.Description>
     </>
-  ))
-}
+  );
+};
 
 export default PcDynamic;

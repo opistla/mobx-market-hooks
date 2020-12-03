@@ -7,7 +7,7 @@ const YgButton = (props) => {
     <Button
       {...props}
     />
-  )
-}
+  );
+};
 
 export default YgButton;

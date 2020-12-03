@@ -7,7 +7,7 @@ const YgCard = (props) => {
     <Card
       {...props}
     />
-  )
-}
+  );
+};
 
 export default YgCard;

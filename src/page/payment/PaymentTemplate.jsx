@@ -27,6 +27,6 @@ const PaymentTemplate = () => {
       </div>
     </div>
   );
-}
+};
 
 export default PaymentTemplate;

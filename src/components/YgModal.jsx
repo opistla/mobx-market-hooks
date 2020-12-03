@@ -16,7 +16,7 @@ const YgModal = forwardRef((props, ref) => {
       ...data,
       open: true
     });
-  }
+  };
 
   const onConfirm = () => {
     const { onOk } = options;
@@ -24,11 +24,11 @@ const YgModal = forwardRef((props, ref) => {
       onOk();
     }
     onClose();
-  }
+  };
 
   const onClose = () => {
     setOptions({ open: false });
-  }
+  };
 
   const footButtons = (isConfirm) => {
     let btns = [{ key: 'cancel', content: '확인', positive: true, onClick: onClose }];
@@ -52,7 +52,7 @@ const YgModal = forwardRef((props, ref) => {
       content={content}
       actions={footButtons(isConfirm)}
     />
-  )
+  );
 });
 
 export default YgModal;

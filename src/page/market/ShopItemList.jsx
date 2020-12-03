@@ -11,7 +11,7 @@ const ShopItemList = () => {
 
   const onPut = (item) => {
     market.put(item);
-  }
+  };
 
   const paneItem = (key) => {
     const list = foodList.getFoodList(key);
@@ -19,8 +19,8 @@ const ShopItemList = () => {
       <Item.Group divided>
         {list.map((item, i) => <ShopItem key={i} category={key} {...item} onPut={onPut} />)}
       </Item.Group>
-    )
-  }
+    );
+  };
 
   const tabItems = [
     { menuItem: ko('snack'), pane: paneItem('snack') },
@@ -33,7 +33,7 @@ const ShopItemList = () => {
     <YgTab
       items={tabItems}
     />
-  )
-}
+  );
+};
 
 export default ShopItemList;

@@ -4,6 +4,6 @@ import {
 
 const useStore = () => {
   return { counter, market, user, payment };
-}
+};
 
 export default useStore;

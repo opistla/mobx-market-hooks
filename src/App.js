@@ -1,36 +1,38 @@
-import React, { useEffect, useState, useRef } from 'react';
-import Router from './Routers';
+import React, { useRef } from 'react';
 import { YgModal } from 'components';
-import { Segment, Loader, Dimmer } from 'semantic-ui-react';
+import Router from './Routers';
+// import { Segment, Loader, Dimmer } from 'semantic-ui-react';
 
 const App = () => {
 
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const modalRef = useRef();
 
-  const onLoading = () => {
-    setLoading(true);
-  }
+  // const onLoading = () => {
+  //   setLoading(true);
+  // }
 
-  useEffect(() => {
-    if (loading) {
-      setTimeout(() => {
-        setLoading(false);
-      }, 3000);
-    }
-  }, [loading]);
+  // useEffect(() => {
+  //   if (loading) {
+  //     setTimeout(() => {
+  //       setLoading(false);
+  //     }, 3000);
+  //   }
+  // }, [loading]);
 
   return (
     <div className="App">
-      <Segment>
+      {/* <Segment>
         <Dimmer active={loading}>
           <Loader size='massive'>Loading</Loader>
         </Dimmer>
         <YgModal ref={modalRef} />
         <Router modal={modalRef} onLoading={onLoading} />
-      </Segment>
+      </Segment> */}
+      <YgModal ref={modalRef} />
+      <Router modal={modalRef} />
     </div>
   );
-}
+};
 
 export default App;

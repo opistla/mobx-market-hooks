@@ -16,6 +16,6 @@ const SuperMarketTemplate = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export default SuperMarketTemplate;
