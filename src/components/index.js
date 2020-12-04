@@ -5,6 +5,8 @@ import YgTab from './YgTab';
 import YgButton from './YgButton';
 import YgTable from './YgTable';
 import YgModal from './YgModal';
+import YgToast from './YgToast';
+import YgChart from './YgChart';
 
 export {
   YgInput,
@@ -13,5 +15,7 @@ export {
   YgTab,
   YgButton,
   YgTable,
-  YgModal
+  YgModal,
+  YgToast,
+  YgChart
 };

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { YgModal } from 'components';
+import { YgModal, YgToast } from 'components';
 import Router from './Routers';
 // import { Segment, Loader, Dimmer } from 'semantic-ui-react';
 
@@ -7,6 +7,7 @@ const App = () => {
 
   // const [loading, setLoading] = useState(false);
   const modalRef = useRef();
+  const toastRef = useRef();
 
   // const onLoading = () => {
   //   setLoading(true);
@@ -30,7 +31,8 @@ const App = () => {
         <Router modal={modalRef} onLoading={onLoading} />
       </Segment> */}
       <YgModal ref={modalRef} />
-      <Router modal={modalRef} />
+      <YgToast ref={toastRef} />
+      <Router modal={modalRef} toast={toastRef} />
     </div>
   );
 };

@@ -86,7 +86,13 @@ const Routers = (props) => {
                 <Route exact path="/" component={Home} />
                 {routes.map((route, i) => {
                   return (
-                    <RouteWithSubRoutes key={i} {...route} modal={props.modal} onLoading={props.onLoading} />
+                    <RouteWithSubRoutes
+                      {...route}
+                      key={i}
+                      modal={props.modal}
+                      toast={props.toast}
+                      onLoading={props.onLoading}
+                    />
                   );
                 })}
               </Switch>
@@ -105,7 +111,13 @@ const RouteWithSubRoutes = (route) => {
       path={route.path}
       render={props => {
         return (
-          <route.component {...props} routes={route.routes} modal={route.modal} onLoading={route.onLoading} />
+          <route.component
+            {...props}
+            routes={route.routes}
+            modal={route.modal}
+            toast={route.toast}
+            onLoading={route.onLoading}
+          />
         );
       }}
     />

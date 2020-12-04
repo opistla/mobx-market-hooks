@@ -44,7 +44,8 @@ const market = observable({
     const list = _.map(this.selectedItems, item => {
       return {
         type: 'food',
-        code: `${item.name} x ${item.count}`,
+        code: item.name,
+        count: item.price / item.defaultPrice,
         payment: item.price
       };
     });

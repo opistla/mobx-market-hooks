@@ -4,7 +4,7 @@ import { PcTemplate, PcInformation, PcItemList } from 'page/pc';
 const PcRoom = (props) => (
   <PcTemplate
     information={<PcInformation />}
-    pcList={<PcItemList modal={props.modal} />}
+    pcList={<PcItemList modal={props.modal} toast={props.toast} />}
   />
 );
 

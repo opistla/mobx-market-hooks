@@ -41,7 +41,7 @@ const user = observable({
     const fined = _.find(this.pcUserList, f => f.pc === num);
     if (fined) {
       const obj = [
-        { type: 'pc', code: `${num}번`, payment: fined.payment }
+        { type: 'pc', code: `${num}번`, count: 1, payment: fined.payment }
       ];
       payment.addPayment(fined.payment, obj);
     }

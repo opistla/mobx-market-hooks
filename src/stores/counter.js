@@ -13,7 +13,7 @@ const counter = observable({
     this.itemPutTake('take', market.selectedItem.name);
   },
 
-  itemPutTake(fn, item, n) {
+  itemPutTake(fn, item) {
     if (_.keys(market.selectedItem).length !== 0) {
       market[fn](item);
     }

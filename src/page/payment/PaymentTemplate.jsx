@@ -2,6 +2,7 @@ import React from 'react';
 import useStore from 'useStore';
 import { util } from 'utils/util';
 import PaymentTable from './PaymentTable';
+import PaymentChart from './PaymentChart';
 
 const PaymentTemplate = () => {
 
@@ -22,6 +23,7 @@ const PaymentTemplate = () => {
   return (
     <div style={style}>
       <PaymentTable data={payment.productObj} />
+      <PaymentChart data={payment.productObj} />
       <div style={totalStyle}>
         총 금액: <b>{util.numberCommas(payment.totalMoney)}</b> 원
       </div>
