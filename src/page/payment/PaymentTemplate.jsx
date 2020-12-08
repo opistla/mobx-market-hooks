@@ -12,6 +12,7 @@ const PaymentTemplate = () => {
     marginLeft: '10%',
     marginRight: '10%',
     marginTop: '5%',
+    minHeight: '817px'
   };
 
   const totalStyle = {
@@ -22,8 +23,14 @@ const PaymentTemplate = () => {
 
   return (
     <div style={style}>
-      <PaymentTable data={payment.productObj} />
-      <PaymentChart data={payment.productObj} />
+      {
+        payment.productObj.length !== 0 && (
+          <>
+            <PaymentTable data={payment.productObj} />
+            <PaymentChart data={payment.productObj} />
+          </>
+        )
+      }
       <div style={totalStyle}>
         총 금액: <b>{util.numberCommas(payment.totalMoney)}</b> 원
       </div>

@@ -4,8 +4,6 @@ import useStore from 'useStore';
 import moment from 'moment';
 import { util } from 'utils/util';
 
-const CONTER = 1;
-
 const PcDynamic = (props) => {
 
   const { item } = props;
@@ -21,7 +19,7 @@ const PcDynamic = (props) => {
     let timeout = null;
     if (item.state === 'start') {
       timeout = setTimeout(() => {
-        user.userDynamicData(item, CONTER);
+        user.userDynamicData(item);
       }, 1000);
     }
     return () => { clearTimeout(timeout); };

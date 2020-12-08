@@ -46,7 +46,8 @@ const market = observable({
         type: 'food',
         code: item.name,
         count: item.price / item.defaultPrice,
-        payment: item.price
+        payment: item.price,
+        defaultPrice: item.defaultPrice
       };
     });
 

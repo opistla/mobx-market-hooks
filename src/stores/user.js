@@ -41,7 +41,7 @@ const user = observable({
     const fined = _.find(this.pcUserList, f => f.pc === num);
     if (fined) {
       const obj = [
-        { type: 'pc', code: `${num}번`, count: 1, payment: fined.payment }
+        { type: 'pc', code: `${num}번`, count: 1, payment: fined.payment, defaultPrice: DEFAULT_PAYMENT }
       ];
       payment.addPayment(fined.payment, obj);
     }
@@ -60,10 +60,10 @@ const user = observable({
     fined.state = state;
   },
 
-  userDynamicData(user, count) {
+  userDynamicData(user) {
     const fined = _.find(this.pcUserList, f => f.id === user.id);
     if (fined) {
-      fined.time += count;
+      fined.time = this.getTimer(fined);
       if ((Math.floor(fined.time) % UPDATE_TIME) === 0) {
         fined.play = _.sample(GAME_LIST);
       }
@@ -74,15 +74,7 @@ const user = observable({
   userSetTime(user) {
     const fined = _.find(this.pcUserList, f => f.id === user.id);
     if (fined) {
-      let date = 0;
-      if (user.stopDt) {
-        // 일시정지를 1번이라도 한 피시는 이 로직을 태움
-        date = moment().diff(user.stopDt);
-        fined.time = (date / 1000) + user.stopTime;
-      } else {
-        date = moment().diff(user.startDt);
-        fined.time = date / 1000;
-      }
+      fined.time = this.getTimer(fined);
       fined.payment = this.paymentTotal(fined);
     }
   },
@@ -90,6 +82,20 @@ const user = observable({
   paymentTotal(item) {
     return (Math.floor(item.time / PAY_UPDATE_TIME) * PAY_UPDATE_TIME) + DEFAULT_PAYMENT;
   },
+
+  getTimer(user) {
+    let time = 0;
+    let date = 0;
+    if (user.stopDt) {
+      // 일시정지를 1번이라도 한 피시는 이 로직을 태움
+      date = moment().diff(user.stopDt);
+      time = (date / 1000) + user.stopTime;
+    } else {
+      date = moment().diff(user.startDt);
+      time = date / 1000;
+    }
+    return time;
+  }
 
 });
 

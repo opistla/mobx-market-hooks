@@ -43,7 +43,7 @@ const YgToast = forwardRef((props, ref) => {
       <Segment
         inverted
         style={{
-          // background: '#db2828',
+          background: '#6B66FF',
           width: '50%',
           left: '25%',
           position: 'fixed',

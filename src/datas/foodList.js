@@ -20,6 +20,42 @@ const DRINK = [
     price: 850,
     imgSrc: 'http://ojsfile.ohmynews.com/STD_IMG_FILE/2018/1115/IE002421031_STD.jpg'
   },
+  {
+    code: 'd02',
+    name: '펩시',
+    price: 1500,
+    imgSrc: 'd2.jpg'
+  },
+  {
+    code: 'd03',
+    name: '7UP',
+    price: 1500,
+    imgSrc: 'd3.jpg'
+  },
+  {
+    code: 'd04',
+    name: '미란다 오렌지',
+    price: 1500,
+    imgSrc: 'd4.jpg'
+  },
+  {
+    code: 'd05',
+    name: '마운틴뷰',
+    price: 1500,
+    imgSrc: 'd5.jpg'
+  },
+  {
+    code: 'd06',
+    name: '레드불소',
+    price: 1500,
+    imgSrc: 'd6.jpg'
+  },
+  {
+    code: 'd07',
+    name: '탄산수',
+    price: 1500,
+    imgSrc: 'd7.jpg'
+  },
 ];
 
 const RICE = [

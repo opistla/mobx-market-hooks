@@ -13,6 +13,7 @@ const payment = observable({
     if (fined.length !== 0) {
       list = _.map(fined, item => {
         item.payment += payment;
+        item.count = item.payment / item.defaultPrice;
         return item;
       });
     }

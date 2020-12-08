@@ -77,7 +77,7 @@ const Routers = (props) => {
           <Sidebar.Pusher dimmed={visible}>
             <Segment basic>
               <Segment>
-                <Button fluid color='green' onClick={onClick}>
+                <Button fluid style={{ background: '#8F8AFF' }} onClick={onClick}>
                   <Icon name="list alternate" />
                   Menu
                 </Button>
