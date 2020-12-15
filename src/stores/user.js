@@ -33,6 +33,7 @@ const user = observable({
       payment: DEFAULT_PAYMENT,
       time: 0,
       stopTime: 0,
+      count: 0,
       image: `kakao${_.sample(_.range(1, 23))}.png` // kakao1 ~ kakao22 이미지를 랜덤하게 참조
     });
   },
@@ -41,7 +42,7 @@ const user = observable({
     const fined = _.find(this.pcUserList, f => f.pc === num);
     if (fined) {
       const obj = [
-        { type: 'pc', code: `${num}번`, count: 1, payment: fined.payment, defaultPrice: DEFAULT_PAYMENT }
+        { type: 'pc', code: `${num}번`, count: ++fined.count, payment: fined.payment, defaultPrice: DEFAULT_PAYMENT }
       ];
       payment.addPayment(fined.payment, obj);
     }

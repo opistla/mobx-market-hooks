@@ -1,5 +1,5 @@
 import React from 'react';
-import { VictoryChart, VictoryBar } from "victory";
+import { VictoryChart, VictoryBar, VictoryTheme } from "victory";
 
 const YgChart = (props) => {
 
@@ -8,6 +8,7 @@ const YgChart = (props) => {
   return (
     <VictoryChart
       {...chart}
+      theme={VictoryTheme[props.chart.theme] || VictoryTheme.grayscale}
     >
       <VictoryBar
         {...bar}

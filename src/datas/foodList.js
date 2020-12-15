@@ -3,58 +3,82 @@ const SNACK = [
     code: 's01',
     name: '포카칩',
     price: 1500,
-    imgSrc: 'https://image.enuri.info/webimage_300/2219800000/2219830000/2219836670.jpg'
+    imgSrc: 's01.jpeg'
   },
   {
     code: 's02',
     name: '새우깡',
     price: 1000,
-    imgSrc: 'https://contents.lotteon.com/itemimage/LM/88/01/04/30/36/03/0_/00/1/LM8801043036030_001_1.jpg'
+    imgSrc: 's02.jpeg'
+  },
+  {
+    code: 's03',
+    name: '꼬북칩',
+    price: 2500,
+    imgSrc: 's03.jpeg'
+  },
+  {
+    code: 's04',
+    name: '수미칩',
+    price: 2000,
+    imgSrc: 's04.jpeg'
+  },
+  {
+    code: 's05',
+    name: '허니버터칩',
+    price: 3000,
+    imgSrc: 's05.jpeg'
+  },
+  {
+    code: 's06',
+    name: '치토스',
+    price: 1000,
+    imgSrc: 's06.jpeg'
   },
 ];
 
 const DRINK = [
   {
     code: 'd01',
-    name: '생수',
-    price: 850,
-    imgSrc: 'http://ojsfile.ohmynews.com/STD_IMG_FILE/2018/1115/IE002421031_STD.jpg'
+    name: '아이리스',
+    price: 800,
+    imgSrc: 'd01.jpeg'
   },
   {
     code: 'd02',
-    name: '펩시',
+    name: '콜라',
     price: 1500,
-    imgSrc: 'd2.jpg'
+    imgSrc: 'd02.jpeg'
   },
   {
     code: 'd03',
-    name: '7UP',
+    name: '사이다',
     price: 1500,
-    imgSrc: 'd3.jpg'
+    imgSrc: 'd03.jpeg'
   },
   {
     code: 'd04',
-    name: '미란다 오렌지',
+    name: '환타',
     price: 1500,
-    imgSrc: 'd4.jpg'
+    imgSrc: 'd04.jpeg'
   },
   {
     code: 'd05',
-    name: '마운틴뷰',
+    name: '아메리카노',
     price: 1500,
-    imgSrc: 'd5.jpg'
+    imgSrc: 'd05.jpeg'
   },
   {
     code: 'd06',
-    name: '레드불소',
-    price: 1500,
-    imgSrc: 'd6.jpg'
+    name: '카페라떼',
+    price: 2500,
+    imgSrc: 'd06.jpeg'
   },
   {
     code: 'd07',
-    name: '탄산수',
-    price: 1500,
-    imgSrc: 'd7.jpg'
+    name: '포카리스웨트',
+    price: 3000,
+    imgSrc: 'd07.jpeg'
   },
 ];
 
@@ -62,23 +86,89 @@ const RICE = [
   {
     code: 'r01',
     name: '마라탕',
+    price: 5000,
+    imgSrc: 'r01.jpeg'
+  },
+  {
+    code: 'r02',
+    name: '블고기버거 셋트',
+    price: 6000,
+    imgSrc: 'r02.jpeg'
+  },
+  {
+    code: 'r03',
+    name: '새우버거1+1',
+    price: 4000,
+    imgSrc: 'r03.jpeg'
+  },
+  {
+    code: 'r04',
+    name: '김치볶음밥',
+    price: 5000,
+    imgSrc: 'r04.jpeg'
+  },
+  {
+    code: 'r05',
+    name: '오징어순대',
+    price: 6000,
+    imgSrc: 'r05.jpeg'
+  },
+  {
+    code: 'r06',
+    name: '삼겹살',
+    price: 5000,
+    imgSrc: 'r06.jpeg'
+  },
+  {
+    code: 'r07',
+    name: '족발셋트',
+    price: 7000,
+    imgSrc: 'r07.jpeg'
+  },
+  {
+    code: 'r08',
+    name: '핫도그1+1',
     price: 3000,
-    imgSrc: 'https://m.atemshop.com/web/product/big/201907/8a504eee7e966a863c53316af4b41c8d.jpg'
+    imgSrc: 'r08.jpeg'
   }
 ];
 
 const NOODLE = [
   {
     code: 'n01',
-    name: '신라면',
-    price: 900,
-    imgSrc: 'https://photo3.enuri.info/data/images/service/middle/686000/686917.jpg'
+    name: '진라면 냄비',
+    price: 2500,
+    imgSrc: 'n01.jpeg'
   },
   {
     code: 'n02',
-    name: '왕뚜껑',
+    name: '신라면 컵라면',
     price: 1000,
-    imgSrc: 'https://images.coocha.co.kr/upload/2020/07/interparkep/09/thumb4_406863713.jpg'
+    imgSrc: 'n02.jpeg'
+  },
+  {
+    code: 'n03',
+    name: '우동',
+    price: 2500,
+    imgSrc: 'n03.jpeg'
+  },
+  {
+    code: 'n04',
+    name: '쫄면',
+    price: 3000,
+    imgSrc: 'n04.jpeg'
+  },
+  {
+    code: 'n05',
+    name: '물냉면',
+    price: 3500,
+    imgSrc: 'n05.jpeg'
+  },
+  {
+    code: 'n06',
+    name: '돈코츠라멘',
+    price: 5000,
+    imgSrc: 'n06.jpeg'
   },
 ];
 

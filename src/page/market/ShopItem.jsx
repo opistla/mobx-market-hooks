@@ -8,11 +8,11 @@ const ShopItem = (props) => {
   const { imgSrc, name, price, onPut } = props;
   return (
     <Item className="ShopItem" onClick={() => onPut(props)}>
-      {/* <Item.Image size='tiny' src={imgSrc} /> */}
       <YgImage
         floated='right'
-        size='mini'
+        size='tiny'
         src={imgSrc}
+        circular
       />
       <Item.Content>
         <Item.Header>{name}</Item.Header>

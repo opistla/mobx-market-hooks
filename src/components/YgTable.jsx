@@ -20,6 +20,8 @@ const YgTable = (props) => {
 
       <Table.Body>
         {
+
+
           _.map(body, (item, i) => (
             <Table.Row key={i}>
               {

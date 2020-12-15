@@ -1,30 +1,43 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { YgChart } from 'components';
+import { Header } from 'semantic-ui-react';
 import _ from 'lodash';
+import { util } from 'utils/util';
 
 const PaymentChart = (props) => {
 
   const [data, setData] = useState();
-  const isChange = React.useRef(false);
+  const isChange = useRef(false);
 
   useEffect(() => {
+    setData(getData(isChange.current));
     const interval = setInterval(() => {
       isChange.current = !isChange.current;
       setData(getData(isChange.current));
-    }, 3000);
+    }, 5000);
     return () => { clearInterval(interval); };
   }, []);
 
   const getData = (flag) => {
     const getList = _.filter(props.data, item => item.type === (flag ? 'pc' : 'food'));
     return _.map(getList, item => {
-      return { x: item.code, y: item.payment, label: `${item.payment}` };
+      const x = item.code.length > 3 ? `${item.code.substring(0, 3)}...` : item.code;
+      return { x, y: item.payment, label: `${util.numberCommas(item.payment)}` };
     });
   };
 
   const chart = {
     domainPadding: { x: 50 },
-    animate: {duration: 500}
+    animate: { duration: 500, onLoad: { duration: 500 } },
+    width: 1500,
+    style: {
+      parent: {
+        border: "1px solid #ccc"
+      },
+      background: {
+        fill: "pink"
+      }
+    }
   };
 
   const bar = {
@@ -45,10 +58,18 @@ const PaymentChart = (props) => {
   };
 
   return (
-    <YgChart
-      chart={chart}
-      bar={bar}
-    />
+    <div>
+      <Header
+        as='h2'
+        icon={isChange.current ? 'gamepad' : 'food'}
+        content={isChange.current ? 'PC' : 'FOOD'}
+      />
+      <YgChart
+        chart={chart}
+        bar={bar}
+      />
+    </div>
+
   );
 };
 
