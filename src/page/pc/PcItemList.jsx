@@ -29,7 +29,6 @@ const PcItemList = (props) => {
       </Card.Group>
     );
   });
-
 };
 
 export default PcItemList;

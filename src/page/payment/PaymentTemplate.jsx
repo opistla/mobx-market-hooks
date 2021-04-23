@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import useStore from 'useStore';
 import { util } from 'utils/util';
 import { Button } from 'semantic-ui-react';
-import PaymentTable from './PaymentTable';
-import PaymentChart from './PaymentChart';
+import { PaymentTable, PaymentChart } from '.';
+
 
 const PaymentTemplate = () => {
 
