@@ -3,7 +3,7 @@ import { useObserver } from 'mobx-react';
 import useStore from 'useStore';
 import { Card } from 'semantic-ui-react';
 import _ from 'lodash';
-import { PcItem } from 'page/pc';
+import PcItemFrame from 'containers/pc/PcItemFrame';
 
 const PcItemList = (props) => {
 
@@ -23,7 +23,7 @@ const PcItemList = (props) => {
       <Card.Group>
         {
           _.map(items, (item, i) =>
-            <PcItem {...props} key={i} item={item} />
+            <PcItemFrame {...props} key={i} item={item} />
           )
         }
       </Card.Group>

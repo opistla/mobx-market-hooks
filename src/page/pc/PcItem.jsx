@@ -1,5 +1,4 @@
-import React, { useState, useMemo } from 'react';
-import useStore from 'useStore';
+import React, { useMemo } from 'react';
 import { YgImage, YgButton } from 'components';
 import { Card, Icon, Segment } from 'semantic-ui-react';
 import moment from 'moment';
@@ -8,54 +7,7 @@ import PcDynamic from './PcDynamic';
 
 const PcItem = (props) => {
 
-  const { item } = props;
-  const { user } = useStore();
-  const [loading, setLoading] = useState(false);
-
-  const modal = (message, ok) => {
-    props.modal.current.show({
-      content: message,
-      isConfirm: true,
-      onOk: ok
-    });
-  };
-
-  const toast = (message) => {
-    props.toast.current.show({
-      content: message
-    });
-  };
-
-  const onStartPc = (num) => {
-    let timer = 0;
-    setLoading(true);
-    const interval = setInterval(() => {
-      timer ++;
-      if (timer > 2) {
-        setLoading(false);
-        clearInterval(interval);
-        user.pcStart(num);
-        toast(`${num}번 pc가 시작 되었습니다.`);
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  };
-
-  const onStart = (num) => {
-    modal(`${num}번 PC 사용을 시작 하시겠습니까?`, () => onStartPc(num));
-  };
-
-  const onEnd = (num) => {
-    modal(`${num}번 PC 사용을 종료 하시겠습니까?`, () => {
-      user.pcEnd(num);
-      toast(`${num}번 pc가 종료 되었습니다.`);
-    });
-  };
-
-  const onStop = (num) => {
-    user.pcStop(num);
-  };
+  const { item, loading, onStop, onEnd, onStart } = props;
 
   return useMemo(() => (
     <Card>
@@ -126,4 +78,4 @@ const PcState = (props) => {
   );
 };
 
-export default PcItem;
+export default React.memo(PcItem);
