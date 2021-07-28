@@ -21,6 +21,8 @@ const App = () => {
   //   }
   // }, [loading]);
 
+  console.log('APP');
+
   return (
     <div className="App">
       {/* <Segment>
