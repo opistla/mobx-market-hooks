@@ -32,8 +32,8 @@ const Home = () => {
         <Card.Group itemsPerRow={3} className="card-group" items={items} />
       </div> */}
       <Embed
-        id='FjTqRZS4JO8'
-        placeholder='/images/image-16by9.png'
+        id='zQqscf6AHiA'
+        placeholder='/images/dron.jpg'
         source='youtube'
         aspectRatio='21:9'
       />
