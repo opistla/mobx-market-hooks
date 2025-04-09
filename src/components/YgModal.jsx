@@ -55,4 +55,6 @@ const YgModal = forwardRef((props, ref) => {
   );
 });
 
+YgModal.displayName = 'YgModal';
+
 export default YgModal;
