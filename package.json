@@ -6,6 +6,7 @@
     "node": "18.x"
   },
   "dependencies": {
+    "@babel/core": "^7.16.0",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-proposal-decorators": "^7.12.1",
     "@testing-library/jest-dom": "^5.11.4",
@@ -27,7 +28,7 @@
   "scripts": {
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
-    "build:vercel": "cross-env NODE_OPTIONS=--openssl-legacy-provider CI=false react-scripts build",
+    "build:vercel": "cross-env NODE_OPTIONS=--openssl-legacy-provider CI=false SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
