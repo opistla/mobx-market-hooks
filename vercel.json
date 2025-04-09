@@ -5,6 +5,5 @@
     }
   },
   "version": 2,
-  "framework": "create-react-app",
-  "nodeVersion": "16.x"
+  "framework": "create-react-app"
 }
