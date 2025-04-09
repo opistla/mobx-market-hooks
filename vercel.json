@@ -4,19 +4,7 @@
       "NODE_OPTIONS": "--openssl-legacy-provider"
     }
   },
-  "functions": {
-    "api/*.js": {
-      "runtime": "nodejs16.x"
-    }
-  },
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/node",
-      "config": {
-        "buildCommand": "npm run build:vercel"
-      }
-    }
-  ],
-  "version": 2
+  "version": 2,
+  "framework": "create-react-app",
+  "nodeVersion": "16.x"
 } 
