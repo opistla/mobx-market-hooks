@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useObserver } from 'mobx-react';
 import useStore from 'useStore';
 import _ from 'lodash';
 import { Segment, Statistic, Icon, Grid, Header, Divider } from 'semantic-ui-react';
 
 const PcInformation = () => {
-
   const { user } = useStore();
+  const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString());
+  
+  // 1초마다 현재 시간 업데이트
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date().toLocaleTimeString());
+    }, 1000);
+    
+    // 컴포넌트 언마운트 시 타이머 정리
+    return () => clearInterval(timer);
+  }, []);
 
   return useObserver(() => {
     const startPc = _.filter(user.pcUserList, f => f.state).length;
@@ -63,7 +73,7 @@ const PcInformation = () => {
             <Grid.Column>
               <Statistic size="small">
                 <Statistic.Value>
-                  <Icon name="clock" color="teal" /> {new Date().toLocaleTimeString()}
+                  <Icon name="clock" color="teal" /> {currentTime}
                 </Statistic.Value>
                 <Statistic.Label>현재 시간</Statistic.Label>
               </Statistic>
