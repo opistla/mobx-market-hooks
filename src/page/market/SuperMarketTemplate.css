@@ -20,3 +20,33 @@
 .SuperMarketTemplate .items-wrapper {
   background: #f8f9fa;
 }
+
+.supermarket-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.supermarket-content {
+  margin-top: 20px !important;
+}
+
+.items-section, .basket-section {
+  transition: all 0.3s ease;
+}
+
+.items-section:hover, .basket-section:hover {
+  transform: translateY(-3px);
+}
+
+.total-section {
+  margin-top: 20px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+  .supermarket-container {
+    padding: 10px;
+  }
+}

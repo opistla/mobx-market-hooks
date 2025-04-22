@@ -1,11 +1,10 @@
 import React from 'react';
 import { useObserver } from 'mobx-react';
 import useStore from 'useStore';
-import { YgButton } from 'components';
+import { Button, Icon, Statistic, Divider } from 'semantic-ui-react';
 import { util } from 'utils/util';
 
 const TotalPrice = (props) => {
-
   const { market } = useStore();
 
   const payment = () => {
@@ -18,15 +17,35 @@ const TotalPrice = (props) => {
 
   return useObserver(() => (
     <>
-      <hr />
-      <p>
-        <b>총합: </b> {util.numberCommas(market.total)}원
-        {
-          market.total !== 0 && (
-            <YgButton fluid content="결제하기" onClick={payment} />
-          )
-        }
-      </p>
+      <Divider horizontal>
+        <Icon name="calculator" />
+        결제 정보
+      </Divider>
+      
+      <Statistic color="red" size="large">
+        <Statistic.Value>
+          {util.numberCommas(market.total)}원
+        </Statistic.Value>
+        <Statistic.Label>주문 총액</Statistic.Label>
+      </Statistic>
+      
+      {market.total !== 0 && (
+        <>
+          <Divider hidden />
+          <Button 
+            fluid 
+            size="large"
+            color="red" 
+            animated="vertical"
+            onClick={payment}
+          >
+            <Button.Content visible>결제하기</Button.Content>
+            <Button.Content hidden>
+              <Icon name="credit card" />
+            </Button.Content>
+          </Button>
+        </>
+      )}
     </>
   ));
 };

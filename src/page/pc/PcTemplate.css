@@ -1,7 +1,20 @@
 .PcTemplate {
-  /* width: 768px; */
   display: flex;
-  margin-left: 20px;
-  margin-right: auto;
-  margin-top: 1rem;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  gap: 15px;
+  justify-content: center;
+}
+
+.pc-template-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+  .PcTemplate {
+    gap: 10px;
+  }
 }

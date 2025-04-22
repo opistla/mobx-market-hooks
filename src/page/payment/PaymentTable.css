@@ -1,8 +1,27 @@
 .PaymentTable {
-  overflow: auto;
-  min-height: 100px;
-  max-height: 300px;
-  margin-bottom: 10px;
-  position: sticky;
-  top: 0px;
+  width: 85%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.PaymentTable:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.table-pc table {
+  border-top: 3px solid #2185d0 !important;
+}
+
+.table-food table {
+  border-top: 3px solid #21ba45 !important;
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+  .PaymentTable {
+    width: 100%;
+  }
 }
